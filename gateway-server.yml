@@ -27,4 +27,4 @@ management:
       enabled: true # default value
     web:
       exposure:
-        include: gateway
+        include: '*'
