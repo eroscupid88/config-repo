@@ -4,6 +4,12 @@ spring:
   boot:
     admin:
       context-path: /admin
+  cloud:
+    gateway:
+      ## use service discovery as route
+      discovery.locator:
+        enabled: true
+        lowerCaseServiceId: true
 server:
   port: 8072
 eureka:
