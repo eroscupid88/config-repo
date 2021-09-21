@@ -1,9 +1,6 @@
 spring:
   application:
     name: gateway-server
-  boot:
-    admin:
-      context-path: /admin
       
 server:
   port: 8072
@@ -20,24 +17,25 @@ spring:
   cloud:
     loadbalancer.ribbon.enabled: false
     gateway:
-        routes:
-        - id: organization-service
-          uri: lb://organization-service
-          predicates:
-          - Path=/organization/**
-          filters:
-          - RewritePath=/organization/(?<path>.*), /$\{path}
-        - id: springcloud-service
-          uri: lb://springcloud-service
-          predicates:
-          - Path=/springcloud/**
-          filters:
-          - RewritePath=/springcloud/(?<path>.*), /$\{path}
-        ## use service discovery as route
       discovery:
         locator:
           enabled: true
           lower-case-service-id: true
+      # routes:
+      #   - id: organization-service
+      #     uri: lb://organization-service
+      #     predicates:
+      #     - Path=/organization/**
+      #     filters:
+      #     - RewritePath=/organization/(?<path>.*), /$\{path}
+      #   - id: springcloud-service
+      #     uri: lb://springcloud-service
+      #     predicates:
+      #     - Path=/springcloud/**
+      #     filters:
+      #     - RewritePath=/springcloud/(?<path>.*), /$\{path}
+        ## use service discovery as route
+      
 
 management:
   endpoints:
