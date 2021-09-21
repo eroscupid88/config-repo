@@ -25,6 +25,7 @@ management:
   endpoint:
     gateway:
       enabled: true # default value
+      route:
     web:
       exposure:
-        include: '*'
+        include: gateway
