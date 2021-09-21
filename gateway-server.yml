@@ -7,9 +7,10 @@ spring:
   cloud:
     gateway:
       ## use service discovery as route
-      discovery.locator:
-        enabled: true
-        lowerCaseServiceId: true
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
 server:
   port: 8072
 eureka:
