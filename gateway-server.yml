@@ -21,3 +21,10 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
+management:
+  endpoint:
+    gateway:
+      enabled: true # default value
+    web:
+      exposure:
+        include: gateway
